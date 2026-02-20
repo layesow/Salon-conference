@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -15,18 +15,23 @@ class MyApp extends StatelessWidget {
           
           title: const Text('Sallon-Conf'),
         ),
-        body: const Center(
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Sallon-Conf",
+              //Image.asset('assets/images/logo.svg'),
+              SvgPicture.asset(
+                'assets/images/logo.svg',
+                // ignore: deprecated_member_use
+                color: Colors.blue
+              ),
+              const Text("Sallon-Conf",
                 style: TextStyle(
+                  fontFamily: 'Poppins',
                   fontSize: 42
                 ),
               ),
-              Text(
-                "Sallon de virtualisation de conférence du 21 au 23 juin 2026",
+              const Text("Sallon de virtualisation de conférence du 21 au 23 Avril 2026",
                 style: TextStyle(
                   fontSize: 24
                 ),
