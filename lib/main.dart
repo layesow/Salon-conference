@@ -12,13 +12,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home : Scaffold(
         appBar: AppBar(
-          title: const Text('Sallon Conf'),
+          
+          title: const Text('Sallon-Conf'),
         ),
         body: const Center(
-          child: Text(
-            "Bienvenue sur l'application de Sallon!",
-            style: TextStyle(fontSize: 24),
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Sallon-Conf",
+                style: TextStyle(
+                  fontSize: 42
+                ),
+              ),
+              Text(
+                "Sallon de virtualisation de conférence du 21 au 23 juin 2026",
+                style: TextStyle(
+                  fontSize: 24
+                ),
+                textAlign: TextAlign.center,
+              )
+            ],
+          ),
         ),
       ),
     );
