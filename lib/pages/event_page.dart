@@ -14,8 +14,35 @@ class EventPage extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
-      body: const Center(
-        child: Text("Planning de l'événement à venir..."),
+      body: Center(
+        child: ListView(
+          children: [
+            Card(
+              child: ListTile(
+                leading: Image.asset('assets/images/damien.jpg'),
+                title: const Text("Damien de 17h00 à 18h00"),
+                subtitle: const Text("10h00 - 12h00 : Conférence d'ouverture"),
+                trailing: const Icon(Icons.more_vert),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Image.asset('assets/images/defendintelligence.jpg'),
+                title: const Text("Defendintelligence de 17h à 18h"),
+                subtitle: const Text("14h00 - 16h00 : Ateliers pratiques"),
+                trailing: const Icon(Icons.more_vert),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                leading: Image.asset('assets/images/lior.jpg'),
+                title: const Text("Lior de 17h à 18h"),
+                subtitle: const Text("16h00 - 18h00 : Clôture et réseautage"),
+                trailing: const Icon(Icons.more_vert),
+              ),
+            ),
+          ],
+        )
       ),
     );
   }
