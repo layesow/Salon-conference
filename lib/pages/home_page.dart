@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-            ElevatedButton.icon(
+            /* ElevatedButton.icon(
               style: ButtonStyle(
                 backgroundColor: WidgetStateProperty.all(Colors.blue)
               ),
@@ -57,7 +57,7 @@ class HomePage extends StatelessWidget {
                 Icons.calendar_month,
                 color: Colors.white,
               ),
-            )
+            ) */
           ],
         ),
       );

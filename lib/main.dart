@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salonconf/pages/add_event_page.dart';
 import 'package:salonconf/pages/event_page.dart';
 import 'package:salonconf/pages/home_page.dart';
 void main() {
@@ -37,7 +38,8 @@ class _MyAppState extends State<MyApp> {
         ),
         body: [
           const HomePage(),
-          const EventPage()
+          const EventPage(),
+          const AddEventPage()
         ][_currentIndex], // affiche la page correspondant à l'index sélectionné
 
         bottomNavigationBar: BottomNavigationBar(
@@ -49,6 +51,7 @@ class _MyAppState extends State<MyApp> {
           unselectedItemColor: Colors.grey, // couleur des icônes non sélectionnées
           iconSize: 32, // taille des icônes
           elevation: 10, // ombre
+          type: BottomNavigationBarType.fixed, // type de navigation
 
           items: const [
             BottomNavigationBarItem(
@@ -58,6 +61,10 @@ class _MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
               icon: Icon(Icons.calendar_month),
               label: "Planning"
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add),
+              label: "Ajouter"
             ),
           ],
         ),
