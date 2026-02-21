@@ -26,15 +26,27 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.blue,
+          titleTextStyle: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+          iconTheme: IconThemeData(color: Colors.white),
+        ),
+      ),
+
       home : Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "Sallon-Conf",
-            style: TextStyle(
-              color: Colors.white
-            ),
-          ),
-          backgroundColor: Colors.blue,
+          title: [
+            const Text("Accueil"),
+            const Text("Planning"),
+            const Text("Ajouter un événement")
+          ][_currentIndex], // affiche le titre correspondant à l'index sélectionné
+          
         ),
         body: [
           const HomePage(),
