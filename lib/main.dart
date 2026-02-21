@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salonconf/pages/event_page.dart';
 import 'package:salonconf/pages/home_page.dart';
 void main() {
   runApp(const MyApp());
@@ -13,8 +14,14 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 
+  int _currentIndex = 0; // index de l'onglet sélectionné
   
-  
+  setSelectedIndex(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,8 +35,16 @@ class _MyAppState extends State<MyApp> {
           ),
           backgroundColor: Colors.blue,
         ),
-        body: const HomePage(),
+        body: [
+          const HomePage(),
+          const EventPage()
+        ][_currentIndex], // affiche la page correspondant à l'index sélectionné
+
         bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentIndex, // index de l'onglet sélectionné
+          onTap: setSelectedIndex, // fonction appelée lors du tap sur un onglet
+
+          
           selectedItemColor: Colors.blue, // couleur de l'icône sélectionnée
           unselectedItemColor: Colors.grey, // couleur des icônes non sélectionnées
           iconSize: 32, // taille des icônes
