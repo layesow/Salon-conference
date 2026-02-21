@@ -9,17 +9,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sallon-Conf',
-          style: TextStyle(
-            color: Colors.white
-          ),
-        ),
-        backgroundColor: Colors.blue,
-
-      ),
-      body: Center(
+    return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -70,7 +60,6 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }
