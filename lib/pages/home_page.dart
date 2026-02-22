@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:salonconf/pages/event_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({
