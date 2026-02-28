@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
 
@@ -139,12 +140,24 @@ Widget build(BuildContext context) {
                     );
                     FocusScope.of(context).unfocus(); // fermer le clavier
 
-                    // ignore: avoid_print
+                    /* // ignore: avoid_print
                     print ("Ajout de la conférence : $confName, par le Speaker : $speakerName"); // affichage dans la console du nom de la conférence et du nom du speaker
                     // ignore: avoid_print
                     print ("Type de conférence : $selectedConfType"); // affichage dans la console du type de conférence sélectionné
                     // ignore: avoid_print
                     print ("Date de la conférence : $selectedConfDate"); // affichage dans la console de la date sélectionnée
+                    */
+
+                    // ajout dans la base de données firebase
+                    CollectionReference eventsRef = FirebaseFirestore.instance.collection('Events');
+                    eventsRef.add({
+                      'speaker': speakerName,
+                      'date': selectedConfDate,
+                      'subject': confName,
+                      'avatar': 'lior' // avatar par défaut,
+                    }).then((value) => print("Conférence ajoutée avec succès"))
+                    .catchError((error) => print("Erreur lors de l'ajout de la conférence : $error"));
+
                   }
                 }, 
                 child: const Text("Enregistrer")

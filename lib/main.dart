@@ -2,7 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:salonconf/pages/add_event_page.dart';
 import 'package:salonconf/pages/event_page.dart';
 import 'package:salonconf/pages/home_page.dart';
-void main() {
+
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart'; 
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // assure que les widgets sont initialisés avant d'exécuter le reste du code
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
