@@ -153,6 +153,7 @@ Widget build(BuildContext context) {
                     eventsRef.add({
                       'speaker': speakerName,
                       'date': selectedConfDate,
+                      'type': selectedConfType,
                       'subject': confName,
                       'avatar': 'lior' // avatar par défaut,
                     }).then((value) => print("Conférence ajoutée avec succès"))
